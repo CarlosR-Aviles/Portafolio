@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brazo Robótico ESP32 | AviTech Systems</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://kit.fontawesome.com/152b86ac71.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <nav id="navbar">
+            <a href="index.html" class="logo-link">
+                <img src="logo.png" alt="AviTech Systems Logo" class="logo-img">
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html#inicio">Inicio</a></li>
+                <li><a href="index.html#habilidades">Habilidades</a></li>
+                <li><a href="index.html#proyectos">Proyectos</a></li>
+            </ul>
+        </nav>
+    </header>  
+    
+    <main>
+        <section class="hero section-box" style="min-height: auto; margin-top: 8rem; padding: 4rem 5%; text-align: center;">
+            <h1 style="color: var(--primary-color); font-size: 2.5rem; margin-bottom: 10px;">Mini Brazo robótico para actuador neumático mediante ESP32 y BLYNK</h1>
+            <p style="color: var(--secondary-color); font-weight: bold; font-size: 1.1rem;"><i class="fas fa-calendar-alt"></i> Marzo 2026</p>
+        </section>
+
+        <section class="section-box">
+            <h2 class="section-title">Introducción</h2>
+            <p>El presente proyecto tiene como objetivo desarrollar un sistema de control para un mecanismo de brazo robótico con un actuador neumático, utilizando el microcontrolador ESP32 como unidad principal de procesamiento.</p>
+            <br>
+            <p>El sistema es controlado mediante la plataforma Blynk, la cual permite implementar una interfaz de control remoto virtual accesible desde un dispositivo móvil. A través de esta interfaz, el usuario puede interactuar con el sistema en tiempo real.</p>
+            <br>
+            <p>Como elemento de retroalimentación visual, se incorpora una pantalla OLED que muestra el estado y la secuencia de movimientos del brazo robótico durante su operación.</p>
+        </section>
+
+        <section class="section-box">
+            <h2 class="section-title">Descripción del Proyecto</h2>
+            <p>El sistema cuenta con dos modos de funcionamiento: un modo manual, en el cual el usuario controla directamente los actuadores, y un modo semiautomático, donde se ejecuta una secuencia predefinida de movimientos.</p>
+            
+            <h3 style="color: var(--secondary-color); margin: 2rem 0 1rem 0; font-size: 1.5rem;"><i class="fas fa-tools"></i> Componentes Utilizados</h3>
+            <ul style="list-style: none; padding-left: 0; color: var(--light-text);">
+                <li style="margin-bottom: 10px;"><i class="fas fa-microchip" style="color: var(--primary-color); width: 30px;"></i> Microcontrolador ESP32</li>
+                <li style="margin-bottom: 10px;"><i class="fas fa-plug" style="color: var(--primary-color); width: 30px;"></i> Módulo de expansión para ESP32 de 30 pines</li>
+                <li style="margin-bottom: 10px;"><i class="fas fa-cogs" style="color: var(--primary-color); width: 30px;"></i> Tres servomotores</li>
+                <li style="margin-bottom: 10px;"><i class="fas fa-motorcycle" style="color: var(--primary-color); width: 30px;"></i> Un motor paso a paso (28BYJ-48) con driver ULN2003</li>
+                <li style="margin-bottom: 10px;"><i class="fas fa-desktop" style="color: var(--primary-color); width: 30px;"></i> Pantalla OLED (SSD1306)</li>
+                <li style="margin-bottom: 10px;"><i class="fas fa-mobile-alt" style="color: var(--primary-color); width: 30px;"></i> Aplicación móvil Blynk para control remoto</li>
+            </ul>
+        </section>
+
+        <section class="section-box">
+            <h2 class="section-title">Esquema de Conexiones y Control Remoto</h2>
+            <div style="display: flex; flex-wrap: wrap; gap: 2rem; justify-content: center; align-items: flex-start; margin-top: 2rem;">
+                
+                <div style="flex: 1; min-width: 300px; text-align: center;">
+                    <img src="esquema.png" alt="Esquema de conexiones" style="border-radius: 12px; border: 1px solid rgba(255,255,255,0.1); width: 100%;">
+                    <p style="text-align: center; margin-top: 15px; color: var(--gray-text); font-size: 0.9rem;">Figura 1: Esquema de conexiones</p>
+                </div>
+
+                <div style="flex: 1; min-width: 300px; text-align: center;">
+                    <img src="control.png" alt="Botones BLYNK" style="border-radius: 12px; border: 1px solid rgba(255,255,255,0.1); width: 100%; max-width: 350px; margin: 0 auto;">
+                    <p style="text-align: center; margin-top: 15px; color: var(--gray-text); font-size: 0.9rem;">Figura 2: Botones para control remoto en BLYNK</p>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="section-box">
+            <h2 class="section-title">Demostración en Video</h2>
+            <p style="text-align: center; margin-bottom: 2rem;">A continuación, se presenta el funcionamiento real del actuador y la respuesta del sistema a través de la interfaz remota.</p>
+            
+            <div style="text-align: center; border-radius: 12px; overflow: hidden; border: 2px solid var(--border-color); box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+                <iframe width="100%" height="500" src="https://www.youtube.com/embed/iR2KyEnUpLo" title="Demostración Brazo Robótico" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </section>
+
+        <section class="section-box" style="text-align: center; margin-bottom: 6rem;">
+            <h2 class="section-title">Recursos del Proyecto</h2>
+            <p style="margin-bottom: 2rem;">Todo el material necesario para replicar este sistema está disponible de forma gratuita. Se recomienda leer el manual de usuario para una correcta implementación del presente proyecto</p>
+            
+            <div style="display: flex; flex-wrap: wrap; gap: 1.5rem; justify-content: center;">
+                <a href="https://github.com/raulaviles891/Proyecto-Mini-Brazo-robotico-para-actuador-neumatico-mediante-ESP32-y-BLYNK/blob/main/sketch_jan19a.ino" target="_blank" class="btn"><i class="fab fa-github" style="margin-right: 8px;"></i> Código Fuente</a>
+                <a href="https://github.com/raulaviles891/Proyecto-Mini-Brazo-robotico-para-actuador-neumatico-mediante-ESP32-y-BLYNK/blob/main/BRAZO%20ROBOTICO.zip" target="_blank" class="btn"><i class="fas fa-cube" style="margin-right: 8px;"></i> Archivos STL</a>
+                <a href="https://github.com/raulaviles891/Proyecto-Mini-Brazo-robotico-para-actuador-neumatico-mediante-ESP32-y-BLYNK/blob/main/Manual-mini-brazo-robotico.pdf" target="_blank" class="btn"><i class="fas fa-file-pdf" style="margin-right: 8px;"></i> Manual de Usuario</a>
+            </div>
+        </section>
+
+    </main>
+    
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2026 AviTech Systems - Desarrollado por Carlos Avilés</p>
+            <p>Hardware y Software de libre distribución bajo Licencia MIT.</p>
+            <div class="social-links">
+                <a href="https://github.com/raulaviles891" target="_blank"><i class="fab fa-github"></i></a> 
+                <a href="https://www.linkedin.com/in/carlos-a-8890a5210/?skipRedirect=true" target="_blank"><i class="fab fa-linkedin"></i></a> 
+                <a href="https://www.youtube.com/@AviTech-Systems" target="_blank"><i class="fab fa-youtube"></i></a> 
+                 
+            </div> 
+        </div>
+    </footer>
+</body>
+</html>
