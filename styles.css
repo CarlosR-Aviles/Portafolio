@@ -94,12 +94,15 @@ body {
 }
 
 .logo-img {
-    height: 80px; /* Puedes subir o bajar este número si lo quieres más grande o pequeño */
-    width: auto;
+    height: 60px; 
+    width: 60px; 
+    object-fit: cover; 
+    border-radius: 50%; /* círculo perfecto */
     transition: var(--transition);
+    border: 2px solid var(--primary-color); /* anillo */
 }
 
-/* Efecto opcional: hace que el logo brille un poco más al pasar el mouse */
+/* logo brille un poco más al pasar el mouse */
 .logo-img:hover {
     filter: drop-shadow(0 0 10px rgba(30, 136, 229, 0.6));
     transform: scale(1.02);
