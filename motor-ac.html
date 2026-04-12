@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Control PID Motor AC | AviTech Systems</title>
+    <title>PID  AC Motor | AviTech Systems</title>
     <link rel="stylesheet" href="styles.css">
     <script src="https://kit.fontawesome.com/152b86ac71.js" crossorigin="anonymous"></script>
 </head>
@@ -11,65 +11,65 @@
     <header>
         <nav id="navbar">
             <a href="index.html" class="logo-link">
-                <img src="logo.png" alt="AviTech Systems Logo" class="logo-img">
+                <img src="logo3.jpeg" alt="AviTech Systems Logo" class="logo-img">
             </a>
             <ul class="nav-links">
-                <li><a href="index.html#inicio">Inicio</a></li>
-                <li><a href="index.html#habilidades">Habilidades</a></li>
-                <li><a href="index.html#proyectos">Proyectos</a></li>
+                <li><a href="index.html#Home">Home</a></li>
+                <li><a href="index.html#Skills">Skills</a></li>
+                <li><a href="index.html#Projects">Projects</a></li>
             </ul>
         </nav>
     </header>  
     
     <main>
         <section class="hero section-box" style="min-height: auto; margin-top: 8rem; padding: 4rem 5%; text-align: center;">
-            <h1 style="color: var(--primary-color); font-size: 2.5rem; margin-bottom: 10px;">Control de Velocidad PID en motor AC mediante Control de Fase</h1>
+            <h1 style="color: var(--primary-color); font-size: 2.5rem; margin-bottom: 10px;">PID Speed Control of an AC Motor Using a Digital Switch and Duty Cycle</h1>
             <p style="color: var(--secondary-color); font-weight: bold; font-size: 1.1rem;"><i class="fas fa-calendar-alt"></i> Abril 2026</p>
         </section>
 
         <section class="section-box">
             <h2 class="section-title">Introducción</h2>
-            <p>El presente proyecto tiene como objetivo desarrollar un sistema de control de velocidad de lazo cerrado para un motor de corriente alterna (AC), utilizando el microcontrolador ESP32 como unidad principal de procesamiento. Se implementa un algoritmo PID clásico sin el uso de librerías externas.</p>
+            <p>The objective of this project is to develop a closed-loop speed control system for an alternating current (AC) motor, using the ESP32 microcontroller as the main processing unit. A classic PID algorithm is implemented without the use of external libraries.</p>
             <br>
-            <p>El sistema regula la potencia entregada al motor mediante la técnica de control de fase. Para ello, sincroniza un temporizador interno (Hardware Timer) con el cruce por cero de la red eléctrica, calculando el retardo exacto de disparo de un TRIAC.</p>
+            <p>The system regulates the power supplied to the motor using phase control. To do this, it synchronizes an internal timer (hardware timer) with the zero-crossing of the mains power supply, calculating the exact trigger delay for a TRIAC.</p>
             <br>
-            <p>Como elemento de retroalimentación, se utiliza un encoder que registra los pulsos por segundo (PPS) del motor. La interfaz de usuario se maneja a través del Monitor Serie, donde el usuario puede ingresar el <em>Setpoint</em> deseado y observar la respuesta del sistema en tiempo real.</p>
+            <p>An encoder is used as a feedback element to record the motor's pulses per second (PPS). The user interface is managed through the Serial Monitor, where the user can enter the desired <em>Setpoint</em> and observe the system's response in real time.</p>
         </section>
 
         <section class="section-box">
-            <h2 class="section-title">Descripción del Proyecto</h2>
-            <p>El hardware del proyecto está dividido en la etapa de control (bajo voltaje) y la etapa de potencia (alto voltaje de la red eléctrica). El controlador ajusta dinámicamente un ángulo de retardo (delay en microsegundos) para mantener la velocidad constante ante perturbaciones mecánicas.</p>
+            <h2 class="section-title">Project Description</h2>
+            <p>The project's hardware is divided into the control stage (low voltage) and the power stage (high voltage from the electrical grid). The controller dynamically adjusts a delay angle (in microseconds) to maintain a constant speed in the face of mechanical disturbances.</p>
             
-            <h3 style="color: var(--secondary-color); margin: 2rem 0 1rem 0; font-size: 1.5rem;"><i class="fas fa-tools"></i> Componentes Utilizados</h3>
+            <h3 style="color: var(--secondary-color); margin: 2rem 0 1rem 0; font-size: 1.5rem;"><i class="fas fa-tools"></i>Components Used</h3>
             <ul style="list-style: none; padding-left: 0; color: var(--light-text);">
-                <li style="margin-bottom: 10px;"><i class="fas fa-microchip" style="color: var(--primary-color); width: 30px;"></i> Microcontrolador ESP32</li>
-                <li style="margin-bottom: 10px;"><i class="fas fa-plug" style="color: var(--primary-color); width: 30px;"></i> Módulo de expansión para ESP32 de 30 pines</li>
-                <li style="margin-bottom: 10px;"><i class="fas fa-fan" style="color: var(--primary-color); width: 30px;"></i> Motor AC vn-382</li>
-                <li style="margin-bottom: 10px;"><i class="fas fa-bolt" style="color: var(--primary-color); width: 30px;"></i> Módulo Dimmer AC 1 Canal 8A 110V/220V</li>
-                <li style="margin-bottom: 10px;"><i class="fas fa-tachometer-alt" style="color: var(--primary-color); width: 30px;"></i> Sensor de velocidad con encoder</li>
+                <li style="margin-bottom: 10px;"><i class="fas fa-microchip" style="color: var(--primary-color); width: 30px;"></i>ESP32 microcontroller</li>
+                <li style="margin-bottom: 10px;"><i class="fas fa-plug" style="color: var(--primary-color); width: 30px;"></i>30-pin expansion module for ESP32</li>
+                <li style="margin-bottom: 10px;"><i class="fas fa-fan" style="color: var(--primary-color); width: 30px;"></i>AC Motor vn-382</li>
+                <li style="margin-bottom: 10px;"><i class="fas fa-bolt" style="color: var(--primary-color); width: 30px;"></i>Dimmer Module AC 1 Channel 8A 110V/220V</li>
+                <li style="margin-bottom: 10px;"><i class="fas fa-tachometer-alt" style="color: var(--primary-color); width: 30px;"></i>Speed sensor with encoder</li>
             </ul>
         </section>
 
         <section class="section-box">
-            <h2 class="section-title">Esquemas y Control</h2>
+            <h2 class="section-title">Schematics and Control</h2>
             <div style="display: flex; flex-wrap: wrap; gap: 2rem; justify-content: center; align-items: flex-start; margin-top: 2rem;">
                 
                 <div style="flex: 1; min-width: 300px; text-align: center;">
                     <img src="esquemamotorac.png" alt="Esquema de conexiones del ESP32 y etapa de potencia" style="border-radius: 12px; border: 1px solid rgba(255,255,255,0.1); width: 100%;">
-                    <p style="text-align: center; margin-top: 15px; color: var(--gray-text); font-size: 0.9rem;">Figura 1: Esquema de conexiones del ESP32 y etapa de potencia</p>
+                    <p style="text-align: center; margin-top: 15px; color: var(--gray-text); font-size: 0.9rem;">Figure 1: Wiring diagram for the ESP32</p>
                 </div>
 
                 <div style="flex: 1; min-width: 300px; text-align: center;">
                     <img src="estabilizacion.png" alt="Control PID" style="border-radius: 12px; border: 1px solid rgba(255,255,255,0.1); width: 100%; max-width: 400px; margin: 0 auto;">
-                    <p style="text-align: center; margin-top: 15px; color: var(--gray-text); font-size: 0.9rem;">Figura 2: Control PID con una velocidad de 750 pulsos por segundo</p>
+                    <p style="text-align: center; margin-top: 15px; color: var(--gray-text); font-size: 0.9rem;">Figure 2: PID control at a rate of 750 pulses per second</p>
                 </div>
 
             </div>
         </section>
 
         <section class="section-box">
-            <h2 class="section-title">Demostración en Video</h2>
-            <p style="text-align: center; margin-bottom: 2rem;">A continuación, se presenta el funcionamiento real del control de fase y la respuesta del algoritmo PID ante variaciones de carga.</p>
+            <h2 class="section-title">Video Demonstration</h2>
+            <p style="text-align: center; margin-bottom: 2rem;">The following section describes the actual operation of phase control and the response of the PID algorithm to load variations.</p>
             
             <div style="text-align: center; border-radius: 12px; overflow: hidden; border: 2px solid var(--border-color); box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
                 <iframe width="100%" height="500" src="https://www.youtube.com/embed/-SzvxFaVtfg" title="Demostración Control PID AC" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -77,13 +77,13 @@
         </section>
 
         <section class="section-box" style="text-align: center; margin-bottom: 6rem;">
-            <h2 class="section-title">Recursos del Proyecto</h2>
-            <p style="margin-bottom: 2rem;">El código fuente y la documentación técnica de este sistema están disponibles de forma gratuita.</p>
+            <h2 class="section-title">Project Resources</h2>
+            <p style="margin-bottom: 2rem;">The source code and technical documentation for this system are available free of charge.</p>
             
             <div style="display: flex; flex-wrap: wrap; gap: 1.5rem; justify-content: center;">
-                <a href="https://github.com/AviTech-Systems/Control-de-Velocidad-PID-en-motor-AC-mediante-Control-de-Fase/blob/main/PIDMOTORAC.ino" target="_blank" class="btn"><i class="fab fa-github" style="margin-right: 8px;"></i> Código Fuente</a>
+                <a href="https://github.com/CarlosR-Aviles/Control-de-Velocidad-PID-en-motor-AC-mediante-Control-de-Fase/blob/main/PIDMOTORAC.ino" target="_blank" class="btn"><i class="fab fa-github" style="margin-right: 8px;"></i> Código Fuente</a>
                 <!--<a href="#" target="_blank" class="btn"><i class="fas fa-cube" style="margin-right: 8px;"></i> Archivos 3D (Soportes)</a>-->
-                <a href="https://github.com/AviTech-Systems/Control-de-Velocidad-PID-en-motor-AC-mediante-Control-de-Fase/blob/main/Manual-Control-Velocidad.pdf" target="_blank" class="btn"><i class="fas fa-file-pdf" style="margin-right: 8px;"></i> Documentación</a>
+                <a href="https://github.com/CarlosR-Aviles/Control-de-Velocidad-PID-en-motor-AC-mediante-Control-de-Fase/blob/main/Manual-Control-Velocidad.pdf" target="_blank" class="btn"><i class="fas fa-file-pdf" style="margin-right: 8px;"></i> Documentación</a>
             </div>
         </section>
 
@@ -94,7 +94,7 @@
             <p>&copy; 2026 AviTech Systems - Desarrollado por Carlos Avilés</p>
             <p>Hardware y Software de libre distribución bajo Licencia MIT.</p>
             <div class="social-links">
-                <a href="https://github.com/AviTech-Systems" target="_blank"><i class="fab fa-github"></i></a> 
+                <a href="https://github.com/CarlosR-Aviles" target="_blank"><i class="fab fa-github"></i></a> 
                 <a href="https://www.linkedin.com/in/carlos-a-8890a5210/?skipRedirect=true" target="_blank"><i class="fab fa-linkedin"></i></a> 
                 <a href="https://www.youtube.com/@AviTech-Systems" target="_blank"><i class="fab fa-youtube"></i></a> 
             </div> 
