@@ -332,9 +332,50 @@ footer {
         transform: translateY(0);
     }
 }
+/*menu oculto*/
+.menu-toggle {
+    display: none;
+    font-size: 1.8rem;
+    color: var(--primary-color);
+    cursor: pointer;
+    transition: var(--transition);
+}
 
-/* RESPONSIVE */
+.menu-toggle:hover {
+    color: var(--secondary-color);
+}
+
+/* RESPONSIVE (MÓVILES) */
 @media (max-width: 768px) {
+    /* Mostramos el botón de hamburguesa */
+    .menu-toggle {
+        display: block; 
+    }
+
+    /* Convertimos la barra de navegación en un panel lateral oculto */
+    .nav-links {
+        position: absolute;
+        top: 80px; /* Justo debajo del header */
+        right: -100%; /* Lo escondemos fuera de la pantalla hacia la derecha */
+        width: 100%;
+        height: calc(100vh - 80px); /* Ocupa el resto de la pantalla */
+        background: rgba(2, 6, 23, 0.95); /* Fondo oscuro semitransparente */
+        backdrop-filter: blur(15px);
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        padding-top: 3rem;
+        gap: 2.5rem;
+        transition: 0.4s ease-in-out; /* Animación suave al entrar */
+        border-top: 1px solid rgba(255,255,255,0.05);
+    }
+
+    /* Esta es la clase mágica que aplicará JavaScript al hacer clic */
+    .nav-links.active {
+        right: 0; /* Trae el panel devuelta a la pantalla */
+    }
+
+    /* Ajustes que ya tenías para el resto de la página en celular */
     .hero-content {
         flex-direction: column;
         text-align: center;
@@ -343,11 +384,6 @@ footer {
     .hero-image img {
         width: 200px;
         height: 200px;
-    }
-
-    .nav-links {
-        flex-direction: column;
-        gap: 1rem;
     }
 
     .footer-content {
