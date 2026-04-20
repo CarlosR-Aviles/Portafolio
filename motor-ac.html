@@ -105,5 +105,35 @@
             </div> 
         </div>
     </footer>
+    
+    <script>
+        const mobileMenu = document.getElementById('mobile-menu');
+        const navLinks = document.getElementById('nav-links');
+        const menuIcon = mobileMenu.querySelector('i');
+
+        // 1. Abrir/Cerrar menú al tocar el botón
+        mobileMenu.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            
+            // Cambia el icono de rayitas (fa-bars) a una 'X' (fa-times)
+            if (navLinks.classList.contains('active')) {
+                menuIcon.classList.remove('fa-bars');
+                menuIcon.classList.add('fa-times');
+            } else {
+                menuIcon.classList.remove('fa-times');
+                menuIcon.classList.add('fa-bars');
+            }
+        });
+
+        // 2. Cerrar el menú automáticamente cuando se elige una opción
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                menuIcon.classList.remove('fa-times');
+                menuIcon.classList.add('fa-bars');
+            });
+        });
+    </script>
+    
 </body>
 </html>
